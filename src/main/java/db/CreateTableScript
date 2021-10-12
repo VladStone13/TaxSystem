@@ -1,0 +1,29 @@
+create table users
+(
+    firstName varchar(64) null,
+    surName varchar(64) null,
+    email varchar(64) not null,
+    password varchar(16) not null,
+    uuid varchar(64) not null,
+    constraint user_pk
+        primary key (uuid)
+);
+
+create table tax_reports
+(
+    reportText TEXT not null,
+    price decimal(15,2) not null,
+    status enum('IN_PROGRESS', 'ACCEPTED', 'CANCELED') not null,
+    uuid varchar(64) not null,
+    constraint tax_reports_pk
+        primary key (uuid)
+);
+
+create table workers
+(
+    name varchar(32) not null,
+    rating decimal(10,1) not null,
+    uuid varchar(64) not null,
+    constraint workers_pk
+        primary key (uuid)
+);
